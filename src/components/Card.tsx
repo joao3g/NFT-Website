@@ -1,170 +1,108 @@
 import React from "react"
 import styled from "styled-components"
 
-import Ethereum from "../assets/ethereum.svg"
-import Heart from "../assets/heart.svg"
+import { HiArrowRight } from "react-icons/hi"
 
 interface CardProps {
-    backgroundImage: string;
-
-    price: number;
-    id: string;
+    icon: string;
     title: string;
-    likes: number;
-}
-
-interface CardImageProps{
-    backgroundImage: string;
+    description: string;
+    link: string;
 }
 
 const Main = styled.div`
-
-    padding: 0;
-    margin: 0;
-
-    height: 224px;
-    width: 156px;
-
-    overflow: hidden;
-
-    border-radius: 20px;
-`
-
-const CardImage = styled.div<CardImageProps>`
-    background: url(${props => props.backgroundImage});
-    background-size: cover;
-
-    position: relative;
-
-    padding: 0;
-    margin: 0;
-
-    border-radius: 20px 20px 0 0;
-
-    height: 100%;
-    width: 100%;
-
-    max-height: 159px;
-    max-width: 156px;
-`
-
-const CardHeartIcon = styled.img`
-    width: 12px;
-    height: 12px;
-
-    margin-right: 2px;
-`
-
-const CardFeedback = styled.div`
-    cursor: pointer;
-
-    background-color: rgba(47, 47, 52, 0.2);
-    color: #161616;
-
     display: flex;
-    flex-direction: row;
+
+    flex-direction: column;
 
     justify-content: center;
     align-items: center;
 
-    position: absolute;
-    right: 10px;
-    top: 6px;
+    background: #1A1B23;
 
-    padding: 0 4px;
-
-    height: 17px;
-
-    border-radius: 20px;
-
-    font-family: 'Urbanist', sans-serif;
-    font-style: normal;
-    font-weight: 600;
-    font-size: 10px;
-
-`
-
-const CardInfo = styled.div`
-    background-color: rgba(42, 53, 71, 0.3);
-    color: #FFF;
-
-    font-family: 'Urbanist', sans-serif;
-    font-style: normal;
-
-    border-radius: 0 0 20px 20px;
-
-    padding: 0;
+    padding: 32px 24px;
     margin: 0;
 
-    height: 100%;
-    width: 100%;
+    width: 376px;
+
+    overflow: hidden;
+
+    border-radius: 25px;
+
+    h1{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 800;
+        font-size: 32px;
+
+        color: #FFF;
+    }
+
+    p{
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+
+        color: #898CA9;
+        text-align: center;
+    }
+
+    span{
+        cursor: pointer;
+
+        margin-top: 32px;
+
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 16px;
+
+        color: #B982FF;
+        text-align: center;
+
+        display: flex;
+        align-items: center;
+
+        i{
+            margin-left: 6px;
+            text-align: center;
+
+            display: flex;
+            align-items: center;
+        }
+    }
 `
 
-const CardTitle = styled.p`
-    padding: 10px 0 0 10px;
-    margin: 0;
-    margin-bottom: 6px;
-
-    font-weight: 600;
-    font-size: 12px;
-`
-
-const CardLegend = styled.div`
-    padding: 0 10px;
-    margin: 0;
-
+const IconDiv = styled.div`
     display: flex;
-    flex-direction: row;
 
-    justify-content: space-between;
+    justify-content: center;
+    align-items: center;
+
+    width: 80px;
+    height: 80px;
+
+    border-radius: 999px;
+    border: 1px solid transparent;
+
+    background-image: radial-gradient(111.14% 111.14% at 8.37% 0%, #6A6A70, #2E2F36),
+    linear-gradient(52.09deg, #982DEC -11.18%, #DC8DF8 58.92%, #A9C4F3 98.44%);
+
+    background-origin: border-box;
+    background-clip: content-box, border-box;
 `
 
-const CardId = styled.p`
-    padding: 0;
-    margin: 0;
-
-    font-weight: 700;
-    font-size: 14px;
-`
-
-const CardEthereumIcon = styled.img`
-    width: 12px;
-    height: 12px;
-
-    margin-right: 3px;
-`
-
-const CardPrice = styled.p`
-    padding: 0;
-    margin: 0;
-
-    font-weight: 600;
-    font-size: 14px;
-`
 
 export const Card = (props:CardProps) => {
     return(
         <Main>
-            <CardImage
-                backgroundImage={props.backgroundImage}
-            >
-                <CardFeedback>
-                    <CardHeartIcon src={Heart} />
-                    {props.likes}
-                </CardFeedback>
-            </CardImage>
-            <CardInfo>
-                <CardTitle>
-                    {props.title}
-                </CardTitle>
-                <CardLegend>
-                    <CardId> #{props.id} </CardId>
-                    <CardPrice> 
-                        <CardEthereumIcon src={Ethereum}/>    
-                        {props.price} 
-                    </CardPrice>
-                </CardLegend>
-            </CardInfo>
+            <IconDiv>
+                <img src={props.icon} />
+            </IconDiv>
+            <h1>{props.title}</h1>
+            <p>{props.description}</p>
+            <span>{props.link} <i><HiArrowRight /></i></span>
         </Main>
     )
 }

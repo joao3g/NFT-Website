@@ -1,6 +1,6 @@
 import React from "react"
 import styled, { keyframes } from "styled-components"
-import { Card } from "./Card"
+import { Card } from "./NFTCard"
 
 import Avatar1 from "../assets/nft1.png"
 import Avatar2 from "../assets/nft2.png"
@@ -12,7 +12,7 @@ import { Button } from "./Button"
 
 const animationLeftToRight = keyframes`
     from{
-        left: -1500px;
+        left: -800px;
     }   
     to{
         left: 0px;
@@ -21,7 +21,7 @@ const animationLeftToRight = keyframes`
 
 const animationRightToLeft = keyframes`
     from{
-        right: -1500px;
+        right: -800px;
     }   
     to{
         right: 0px;
