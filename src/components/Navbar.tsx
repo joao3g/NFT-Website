@@ -5,9 +5,16 @@ import { Button } from "./Button"
 
 const Nav = styled.nav`
     color: white;
+    background-color: #0B0B0F;
 
-    padding-left: 8%;
-    padding-right: 8%;
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 999;
 `
 
 const Row = styled.div`
@@ -15,6 +22,9 @@ const Row = styled.div`
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
+
+    margin-left: 8%;
+    margin-right: 8%;
 `
 
 const Logo = styled.img`
@@ -62,11 +72,13 @@ export const Navbar = () => {
                 </Links>
                 <div>
                     <Button
-                        fillBackground={false}
+                        size="small"
+                        fillBackground={0}
                     >Sign in</Button>
                     
                     <Button
-                        fillBackground={true}
+                        size="small"
+                        fillBackground={2}
                         marginLeft={16}
                     >Sign up</Button>
                 </div>

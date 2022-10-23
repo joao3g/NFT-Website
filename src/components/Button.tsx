@@ -4,7 +4,11 @@ import styled from "styled-components"
 interface ButtonProps {
     children?: JSX.Element | string;
 
-    fillBackground: boolean
+    fillBackground: 0 /* Transparent background with white text */ 
+    | 1 /* Transparent background with gradient color text */ 
+    | 2 /* Linear gradient background with white text */;
+
+    size: 'small' | 'large';
 
     marginTop?: number;
     marginRight?: number;
@@ -16,13 +20,16 @@ interface ButtonProps {
 
 const ButtonStyled = styled.button<ButtonProps>`
     cursor: pointer;
-    background: ${props => props.fillBackground ? 'linear-gradient(225deg, #18C8FF 14.89%, #933FFE 85.85%)' : 'transparent'};
+    background: ${props => props.fillBackground == 0 ? 'transparent' : 'linear-gradient(225deg, #18C8FF 14.89%, #933FFE 85.85%)'};
 
-    width: 96px;
-    height: 40px;
+    width: ${props => props.size == 'large' ? '156' : '96'}px;
+    height: ${props => props.size == 'large' ? '56' : '40'}px;
 
-    border: ${props => props.fillBackground ? '0px' : '1px solid #FFF'};
+    border: ${props => props.fillBackground == 2 ? '0px' : '1px solid #FFF'};
     border-radius: 10px;
+
+    -webkit-text-fill-color: ${props => props.fillBackground == 1 ? 'transparent' : 'color'};
+    background-clip: ${props => props.fillBackground == 1 ? 'text' : 'initial'};
 
     color: #FFF;
 
@@ -40,6 +47,8 @@ export const Button = (props:ButtonProps) => {
     return(
         <ButtonStyled
             onClick={props.onClick}
+
+            size={props.size}
             fillBackground={props.fillBackground}
 
             marginTop={props.marginTop}
