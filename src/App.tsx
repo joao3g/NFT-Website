@@ -1,5 +1,6 @@
 import { CardSection } from './components/CardSection'
 import { HomeSection } from './components/HomeSection'
+import { InvestSection } from './components/InvestSection'
 import { Navbar } from './components/Navbar'
 
 function App() {
@@ -9,6 +10,7 @@ function App() {
       <Navbar />
       <HomeSection />
       <CardSection />
+      <InvestSection />
     </div>
   )
 }
