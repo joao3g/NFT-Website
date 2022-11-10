@@ -3,6 +3,7 @@ import { HomeSection } from './components/HomeSection'
 import { InvestSection } from './components/InvestSection'
 import { Navbar } from './components/Navbar'
 import { SupportSection } from './components/SupportSection'
+import { Footer } from './components/Footer'
 
 function App() {
 
@@ -13,6 +14,7 @@ function App() {
       <CardSection />
       <InvestSection />
       <SupportSection />
+      <Footer />
     </div>
   )
 }
