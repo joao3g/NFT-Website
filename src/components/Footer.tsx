@@ -199,7 +199,7 @@ export const Footer = () => {
                             Elite Terms of Service
                         </li>
                         <li>
-                            Elite Trade Desk Terms of Servicee
+                            Elite Trade Desk Terms of Service
                         </li>
                     </ul>
                 </PolicyContainer>

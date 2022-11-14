@@ -13,7 +13,14 @@ interface InputProps {
     marginLeft?: number;
 }
 
-const Main = styled.div`
+interface MainProps {
+    marginTop?: number;
+    marginRight?: number;
+    marginBottom?: number;
+    marginLeft?: number;
+}
+
+const Main = styled.div<MainProps>`
     display: flex;
     flex-direction: row;
 
@@ -35,6 +42,11 @@ const Main = styled.div`
 
     background-origin: border-box;
     background-clip: padding-box, border-box;
+
+    margin-top: ${props => props.marginTop ? `${props.marginTop}px` : `0px` };
+    margin-right: ${props => props.marginRight ? `${props.marginRight}px` : `0px` };
+    margin-bottom: ${props => props.marginBottom ? `${props.marginBottom}px` : `0px` };
+    margin-left: ${props => props.marginLeft ? `${props.marginLeft}px` : `0px` };
 `
 
 const InputStyled = styled.input<InputProps>`
@@ -54,11 +66,6 @@ const InputStyled = styled.input<InputProps>`
     font-family: 'Inter', sans-serif;
     font-weight: 400;
     font-size: 14px;
-
-    margin-top: ${props => props.marginTop ? `${props.marginTop}px` : `0px` };
-    margin-right: ${props => props.marginRight ? `${props.marginRight}px` : `0px` };
-    margin-bottom: ${props => props.marginBottom ? `${props.marginBottom}px` : `0px` };
-    margin-left: ${props => props.marginLeft ? `${props.marginLeft}px` : `0px` };
 `
 
 const Icon = styled.div`
@@ -74,16 +81,16 @@ const Icon = styled.div`
 
 export const Input = (props:InputProps) => {
     return(
-        <Main>
+        <Main
+            marginTop={props.marginTop}
+            marginRight={props.marginRight}
+            marginBottom={props.marginBottom}
+            marginLeft={props.marginLeft}
+        >
             <InputStyled
                 type="email"
                 icon={props.icon}
                 placeholder={props.placeholder}
-    
-                marginTop={props.marginTop}
-                marginRight={props.marginRight}
-                marginBottom={props.marginBottom}
-                marginLeft={props.marginLeft}
             />
             <Icon>
                 <HiArrowRight />
