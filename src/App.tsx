@@ -6,6 +6,7 @@ import { SupportSection } from './components/SupportSection'
 import { Footer } from './components/Footer'
 import { ReceiveTransmissionSection } from './components/ReceiveTransmissionSection'
 import { FirstStepSection } from './components/FirstStepSection'
+import { BuySellSection } from './components/BuySellSection'
 
 function App() {
 
@@ -16,6 +17,7 @@ function App() {
       <CardSection />
       <InvestSection />
       <SupportSection />
+      <BuySellSection />
       <FirstStepSection />
       <ReceiveTransmissionSection />
       <Footer />
