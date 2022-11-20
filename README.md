@@ -1,7 +1,7 @@
 # NFT Website
 ### :rocket: Descrição
 
-Este projeto foi criado baseado em um design aberto da comunidade do Figma ([Link para o design](https://www.figma.com/file/h77CyawAko8iLcGf8Z13Jf/NFT-Website-(Community)?node-id=0%3A1&t=oeuIiYn8QiFtpepT-0)), foi desenvolvido no intuito de melhorar as habilidades nas tecnologias utilizadas no projeto, vale ressaltar que além do que foi proposto no design, existe também uma Home Page para que tecnologias como o React Router pudessem ser utilizadas.
+Este projeto foi criado baseado em um design aberto da comunidade do Figma ([Link para o design](https://www.figma.com/file/h77CyawAko8iLcGf8Z13Jf/NFT-Website-(Community)?node-id=0%3A1&t=oeuIiYn8QiFtpepT-0)), foi desenvolvido no intuito de melhorar as habilidades nas tecnologias utilizadas no projeto.
 
 ### :hammer: Tecnologias utilizadas
 
