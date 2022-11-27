@@ -12,6 +12,7 @@ As seguintes ferramentas foram usadas na construção do projeto:
 - [Vite](https://vitejs.dev/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Styled Components](https://styled-components.com/)
+- [React Icons](https://react-icons.github.io/react-icons/)
 
 ### :scroll: Pré-requisitos
 O projeto ainda não foi publicado em nenhuma URL, caso você queira executar na sua máquina local deve seguir os passos abaixo:
