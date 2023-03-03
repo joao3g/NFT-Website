@@ -26,7 +26,7 @@ Além disto e necessário um gerenciador de pacotes, você pode escolher entre o
 
 ```bash
 # Clone este repositório
-$ git clone <https://github.com/joao3g/NFT-Website>
+$ git clone https://github.com/joao3g/NFT-Website
 
 # Acesse a pasta do projeto no terminal/cmd
 $ cd NFT-Website
